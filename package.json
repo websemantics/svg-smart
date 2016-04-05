@@ -1,0 +1,33 @@
+{
+  "name": "svg-smart",
+  "version": "0.1.0",
+  "description": "A Node.js module that generates all your svg, png, icon and svg sprites needs using a data-driven svg template system.",
+  "main": "smart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/websemantics/svg-smart.git"
+  },
+  "keywords": [
+    "svg",
+    "template",
+    "data",
+    "png",
+    "icon",
+    "sprites",
+    "assets",
+    "media"
+  ],
+  "author": "Adnan M.Sagar, PhD. <adnan@websemantics.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/websemantics/svg-smart/issues"
+  },
+  "devDependencies": {
+      "require-dot-file": "*",
+      "mustache" : "*"
+  },
+  "homepage": "https://github.com/websemantics/svg-smart#readme"
+}
