@@ -9,47 +9,37 @@
 ```
 > Updated : April 6, 2016
 
-A Node.js module that generates all your svg, png, icon and svg sprites needs using a data-driven svg template system.
+A Node.js module that generates all your svg, png, icon and svg sprites needs using a data─driven svg template system.
 
 This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
 
-For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp-svg-smart)
+For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp─svg─smart)
 
 This folder contains template files for generating media files. SVG templates contains the graphics blueprint for the required `SVG`, `PNG`, `ICO` and `SVG` sprite files. The html template is used to generate the `index.html` file for media preview.
 
 ## Workflow
 
 ```
-
-(1) DATA >-----+------------+------------------------------+--------------------------------------+
-               |            |                              |                                      |
-  +------------v----+       |                              |                            +---------v-----+
-  |                 |       |                              |                            |               |
-  |   SVG TEMPLATE  |       |                              |   (6) index.html  <--------+ HTML TEMPLATE |
-  |                 |       |                              |                            |               |
-  +---+-------------+       v                              v                            +----------^----+
-      |                    (3)                            (4)                                      |
-      |                                                                                            |
-(2)   +-+ logo.svg +-----+[PNG]+--+-+ logo-w164.png  +-+[ICON]+--+-+ favicon.ico                   |
-      |                           |                              |                                 |
-      |                           +-+ logo-w164@2x.png           +-+ favicon-32x32.png             |
-      |                           |                              |                                 |
-      |                           +-+ logo-h32.png               +-+ android-chrome-36x36.png  --->+
-      |                           |                              |                                 |
-      |                           +-+ logo-h32@2x.png            +-+ apple-touch-icon.png          |
-      |                                                          |                                 |
-      |                                                          |                                 |
-      +-+ logo-text.svg ++[PNG]+--+-+ logo-text+w125.png         +                                 |
-      |                           |                                                                |
-      |                           +-+ logo-text+w125@2x.png                                        |
-      |                           |                                                                |
-      |                           +-+ logo-text+h32.png                                            |
-      |                           |                           ------------------------------------>+
-(5) [SPRITE]                      +-+ logo-text+h32@2x.png                                         |
-      |                                                                                            |
-      +-+ sprite.svg                                                                               |
-      |                --------------------------------------------------------------------------->+
-      +-+ sprite.css
+(1) DATA >─────┬────────────┬──────────────────────────────┬──────────────────────────────────────┐
+               v            │                              │                                      v
+  ┌─────────────────┐       │                              │                            ┌───────────────┐
+  │   SVG TEMPLATE  │       │                              │   (6) index.html  <────────+ HTML TEMPLATE │
+  └───┬─────────────┘       v                              v                            └──────────┬────┘
+      │                    (3)                            (4)                                      ^
+      │                                                                                            │
+(2)   ├── logo.svg ───────[PNG]───┬── logo─w164.png  ───[ICON]───┬── favicon.ico                   │
+      │                           ├── logo─w164@2x.png           ├── favicon─32x32.png             │
+      │                           ├── logo─h32.png               ├── android─chrome─36x36.png  ──> ┤
+      │                           └── logo─h32@2x.png            ├── apple─touch─icon.png          │
+      │                           ┆                              ┆                                 │
+      ├── logo─text.svg ──[PNG]───┬── logo─text+w125.png                                           │
+      │                           ├── logo─text+w125@2x.png                                        │
+      │                           ├── logo─text+h32.png                                            │
+(5) [SPRITE]                      └── logo─text+h32@2x.png    ───────────────────────────────────> ┤
+      │                           ┆                                                                │
+      ├── sprite.svg                                                                               │
+      │                ──────────────────────────────────────────────────────────────────────────> ┘
+      └── sprite.css
 ```
 
 
