@@ -4,7 +4,7 @@
   \ \   | |  / / / / __    ____    _\ \  / /|_/ / / __ |  / , _/   / /
    \ \  | | / / / / / /   /___/   /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
   __\ \ | |/ / / (_/ /          
-/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.4
+/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.5
 
 ```
 > Updated : April 6, 2016

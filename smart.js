@@ -5,7 +5,7 @@
  *   / ____ |  /  _  ____/   ____   / __/ /  |/  / / _ |   / _ \  /_  __/
  *   \ \  | | / / / / __    /___/  _\ \  / /|_/ / / __ |  / , _/   / /
  *  __\ \ | |/ / / (_/ /          /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
- * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.4
+ * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.5
  *
  * This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
  * For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp-svg-smart)
@@ -262,6 +262,7 @@ var mustache = require("mustache");
                 png: _resources.png,
                 icon: _resources.icon,
                 sprite: _resources.sprite,
+                dist: data.global.files.dist,
                 html: hydrate(smart.html, data)
             };
         }
