@@ -5,7 +5,10 @@
  *   / ____ |  /  _  ____/   ____   / __/ /  |/  / / _ |   / _ \  /_  __/
  *   \ \  | | / / / / __    /___/  _\ \  / /|_/ / / __ |  / , _/   / /
  *  __\ \ | |/ / / (_/ /          /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
- * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.3
+ * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.4
+ *
+ * This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
+ * For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp-svg-smart)
  *
  * @link      http://websemantics.ca
  * @author    Web Semantics, Inc. Dev Team <team@websemantics.ca>
@@ -242,7 +245,7 @@ var mustache = require("mustache");
          * Load and process the svg-smart json file
          * @param {smart_filename} string, the svg-smart json file
          * @param {package_filename} string, node.js package filename (reuse of information)
-         * @return object, the media config json with a list of templates
+         * @return object, a list of resources to be generated (svg, png, ico, sprite)
          */
         load: function(smart_filename, package_filename) {
 

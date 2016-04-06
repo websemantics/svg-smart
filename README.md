@@ -4,12 +4,16 @@
   \ \   | |  / / / / __    ____    _\ \  / /|_/ / / __ |  / , _/   / /
    \ \  | | / / / / / /   /___/   /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
   __\ \ | |/ / / (_/ /          
-/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.3
+/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.4
 
 ```
 > Updated : April 6, 2016
 
 A Node.js module that generates all your svg, png, icon and svg sprites needs using a data-driven svg template system.
+
+This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
+
+For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp-svg-smart)
 
 This folder contains template files for generating media files. SVG templates contains the graphics blueprint for the required `SVG`, `PNG`, `ICO` and `SVG` sprite files. The html template is used to generate the `index.html` file for media preview.
 
