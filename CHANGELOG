@@ -1,4 +1,4 @@
-0.1.5
+0.1.6
   date: 2016-04-06
   changes:
   - Generates svg, png, icon and sprite files.

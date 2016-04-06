@@ -5,7 +5,7 @@
  *   / ____ |  /  _  ____/   ____   / __/ /  |/  / / _ |   / _ \  /_  __/
  *   \ \  | | / / / / __    /___/  _\ \  / /|_/ / / __ |  / , _/   / /
  *  __\ \ | |/ / / (_/ /          /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
- * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.5
+ * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.6
  *
  * This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
  * For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp-svg-smart)
@@ -32,9 +32,10 @@ var mustache = require("mustache");
      * @param {templates} array, a list of svg templates configurations
      * @param {data} object, list of flat data nodes with parent-child releashipships (tree) .. keep it simple,
      * @param {concat} string, string connector, i.e. '-' or '.' etc for constructing filenames
+     * @param {dist} string, dist folder
      * @return {array} list of resources,
      */
-    function resources(templates, data, concat) {
+    function resources(templates, data, concat, dist) {
         var resources = {
             svg: [],
             png: [],
@@ -118,7 +119,7 @@ var mustache = require("mustache");
                                     // Summery: compose of the png resource object
                                     return {
                                         "filename": resource.filename + (suffex ? concat + suffex : ''),
-                                        "source": resource.dest + "/" + resource.filename + '.' + resource.extension,
+                                        "source": dist + "/" + resource.dest + "/" + resource.filename + '.' + resource.extension,
                                         "extension": "png",
                                         "scale": scale,
                                         "dest": template.dest + "/" + template.png.dest || '.'
@@ -146,7 +147,7 @@ var mustache = require("mustache");
                     }
                 };
                 resources.sprite.push({
-                    "source": template.sprite ? template.sprite.source || '.' : '.',
+                    "source": dist + "/" + (template.sprite ? template.sprite.source || '.' : '.'),
                     "config": template.sprite ? template.sprite.config || sconfig : sconfig,
                     "dest": template.dest + "/" + (template.sprite ? template.sprite.dest || '.' : '.')
                 });
@@ -168,7 +169,7 @@ var mustache = require("mustache");
                     "replace": true
                 };
                 resources.icon.push({
-                    "source": template.icon ? template.icon.source || '.' : '.',
+                    "source": dist + "/" + (template.icon ? template.icon.source || '.' : '.'),
                     "config": template.icon ? template.icon.config || iconfig : iconfig,
                     "dest": template.dest + "/" + (template.icon ? template.icon.dest || '.' : '.')
                 });
@@ -255,7 +256,7 @@ var mustache = require("mustache");
                 package: read(package_filename)
             };
             var _resources = resources(hydrate(smart.template, data),
-                hydrate(smart.data, data), data.global.files.concatenator);
+                hydrate(smart.data, data), data.global.files.concatenator, data.global.files.dist);
 
             return {
                 svg: _resources.svg,
