@@ -20,30 +20,32 @@ This folder contains template files for generating media files. SVG templates co
 ## Workflow
 
 ```
-(1) DATA >─────┬────────────┬──────────────────────────────┬──────────────────────────────────────┐
-               v            │                              │                                      v
-  ┌─────────────────┐       │                              │                            ┌───────────────┐
-  │   SVG TEMPLATE  │       │                              │   (6) index.html  <────────+ HTML TEMPLATE │
-  └───┬─────────────┘       v                              v                            └──────────┬────┘
-      │                    (3)                            (4)                                      ^
-      │                                                                                            │
-(2)   ├── logo.svg ───────[PNG]───┬── logo─w164.png  ───[ICON]───┬── favicon.ico                   │
-      │                           ├── logo─w164@2x.png           ├── favicon─32x32.png             │
-      │                           ├── logo─h32.png               ├── android─chrome─36x36.png  ──> ┤
-      │                           └── logo─h32@2x.png            ├── apple─touch─icon.png          │
-      │                           ┆                              ┆                                 │
-      ├── logo─text.svg ──[PNG]───┬── logo─text+w125.png                                           │
-      │                           ├── logo─text+w125@2x.png                                        │
-      │                           ├── logo─text+h32.png                                            │
-(5) [SPRITE]                      └── logo─text+h32@2x.png    ───────────────────────────────────> ┤
-      │                           ┆                                                                │
-      ├── sprite.svg                                                                               │
-      │                ──────────────────────────────────────────────────────────────────────────> ┘
-      └── sprite.css
+           (1) SVG / SPRITE      (2) PNG                      (3) ICON                 (4) HTML
+DATA ═══════╦═════════════════════╦════════════════════════════╦═══════════════════════════════╗
+            │                     │                            │                               │
+  ┌─────────v────┐                │                            │                               │
+  │ SVG TEMPLATE │                │                            │                               │
+  └───┬──────────┘                v                            v                               │
+      │                                                                                        │
+      ├── logo.svg ────────────────── logo─w164.png  ──────────┬── favicon.ico                 │
+      │                           ├── logo─w164@2x.png         ├── favicon─32x32.png           │
+      │                           ├── logo─h32.png             ├── android─chrome─36x36.png    │
+      │                           └── logo─h32@2x.png          ├── apple─touch─icon.png        │
+      │                           ┆                            ┆                               │
+      │                                                                                        │
+      ├── logo─text.svg ──────────┬── logo─text+w125.png                                       │
+      │                           ├── logo─text+w125@2x.png                                    │
+      │                           ├── logo─text+h32.png                                        │
+(2) [SPRITE]                      └── logo─text+h32@2x.png     ┆                               │
+      │                           ┆                            │                               │
+      ├── sprite.svg                                           │                               │
+      │                                                        │                               │
+      ├── sprite.css              ┆                            │                               │
+      │                           │                            │                               │
+ ┌────v───────────────────────────v────────────────────────────v───────────────────────────────v───┐
+ │  ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒   HTML TEMPLATE  - index.html   ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒  │
+ └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
-
-
-
 
 The `smart.json` file contains the data used to drive the media generation process.
 
