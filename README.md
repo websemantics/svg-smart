@@ -35,11 +35,10 @@ DATA ═══════╦═════════════════
       │                                                                                        │
       ├── logo─text.svg ──────────┬── logo─text+w125.png                                       │
       │                           ├── logo─text+w125@2x.png                                    │
-      │                           ├── logo─text+h32.png                                        │
-(2) [SPRITE]                      └── logo─text+h32@2x.png     ┆                               │
+      ┆                           ├── logo─text+h32.png                                        │
+                                  └── logo─text+h32@2x.png     ┆                               │
       │                           ┆                            │                               │
       ├── sprite.svg                                           │                               │
-      │                                                        │                               │
       ├── sprite.css              ┆                            │                               │
       │                           │                            │                               │
   ┌───v───────────────────────────v────────────────────────────v───────────────────────────────v───┐
