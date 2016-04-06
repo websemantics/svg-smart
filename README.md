@@ -17,34 +17,35 @@ This folder contains template files for generating media files. SVG templates co
 
 ```
 
-+---------+
-SVG                       PNG                   ICON                   SPRITE               |         |
-DATA ------------------------------------------------------------------------------------------------>         |
-+                                                                                                  |         |
-|                                                                                                  |         |
-+-+------------+                                                                                     |         |
-|              |                                                                                     | PREVIEW |
-|   SVG        |                                                                                     |         |
-|   TEMPLATE   |                                                                                     |  PAGE   |
-|              |                                                                                     |         |
-+-+------------+                                                                                     |         |
-|                                                                                                  |         |
-+-> logo.svg +----------------------------------------------------------------+->-sprite.view.svg  |         |
-|     +                                                                       |                    |         |
-|     |                                                                       +-+ sprite.css       |         |
-|     +--------------------------+-+ logo-w164.png     +-+ favicon.ico                             |         |
-|                                |                     |                                           |         |
-+-> logo-text.svg                +-+ logo-w164@2x.png  +-+ favicon-32x32.png                       |         |
-|     |                          |                     |                                           |         |
-|     +-+ logo-text-w125.png     +-+ logo-h32.png      +-+ android-chrome-36x36.png                |         |
-|                          |                     |                                           |         |
-+-+ logo-text-w125@2x.png  +-+ logo-h32@2x.png   +-+ apple-touch-icon.png                    |         |
-|                                                |                                           |         |
-+-+ logo-text-h32.png                            |                                           |         |
-|                                                                                            |         |
-+-+ logo-text-h32@2x.png                                                                     +----------
-
-INDEX.HTML
+DATA  >--+--------------+------------------------------+------------>
+         |              |                              |     +------+--------+
+         |              |                              |     | HTML TEMPLATE |  
++--------v--------+     |                              |     +------+--------+  
+|                 |     |                              |            |
+|   SVG TEMPLATE  |     |                              |            v
+|                 |     |                              |        index.html
++-+---------------+     v                              v
+  |
+  +-+ logo.svg -------[PNG]---+-+ logo-w164.png  ---[ICON]---+-+ favicon.ico
+  |                           |                              |
+  |                           +-+ logo-w164@2x.png           +-+ favicon-32x32.png
+  |                           |                              |
+  |                           +-+ logo-h32.png               +-+ android-chrome-36x36.png
+  |                           |                              |
+  |                           +-+ logo-h32@2x.png            +-+ apple-touch-icon.png
+  |                                                          |
+  |                                                          |
+  +-+ logo-text.svg --[PNG]---+-+ logo-text-w125.png         +
+  |                           |
+  |                           +-+ logo-text-w125@2x.png
+  |                           |
+  |                           +-+ logo-text-h32.png
+  |                           |
+[SPRITE]                      +-+ logo-text-h32@2x.png
+  |
+  +-+ sprite.svg
+  |
+  +-+ sprite.css
 ```
 
 
