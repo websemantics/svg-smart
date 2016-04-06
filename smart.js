@@ -5,7 +5,7 @@
  *   / ____ |  /  _  ____/   ____   / __/ /  |/  / / _ |   / _ \  /_  __/
  *   \ \  | | / / / / __    /___/  _\ \  / /|_/ / / __ |  / , _/   / /
  *  __\ \ | |/ / / (_/ /          /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
- * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.2
+ * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.3
  *
  * @link      http://websemantics.ca
  * @author    Web Semantics, Inc. Dev Team <team@websemantics.ca>
