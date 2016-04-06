@@ -7,9 +7,9 @@
  *  __\ \ | |/ / / (_/ /          /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
  * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.0
  *
- * @link      http://websemantics.io
- * @author    Web Semantics, Inc. Dev Team <team@websemantics.io>
- * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
+ * @link      http://websemantics.ca
+ * @author    Web Semantics, Inc. Dev Team <team@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.ca>
  */
 
 var readfile = require("require-dot-file");
