@@ -9,6 +9,8 @@
 ```
 > Updated : April 7, 2016
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 A Node.js module that generates all your svg, png, icon and svg sprites needs using a data─driven svg template system.
 
 This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
@@ -19,31 +21,32 @@ This folder contains template files for generating media files. SVG templates co
 
 ## Workflow
 
-```
-           (1) SVG / SPRITE      (2) PNG                      (3) ICON                 (4) HTML
-DATA ═══════╦═════════════════════╦════════════════════════════╦═══════════════════════════════╗
-            │                     │                            │                               │
-  ┌─────────v────┐                │                            │                   ┌───────────v───┐
-  │ SVG TEMPLATE │                │                            │                   | HTML TEMPLATE │
-  └───┬──────────┘                v                            v                   └───────────┬───┘
-      │                                                                                        │
-      ├── logo.svg ────────────────── logo─w164.png  ──────────┬── favicon.ico                 │
-      │                           ├── logo─w164@2x.png         ├── favicon─32x32.png           │
-      │                           ├── logo─h32.png             ├── android─chrome─36x36.png    │
-      │                           └── logo─h32@2x.png          ├── apple─touch─icon.png        │
-      │                           ┆                            ┆                               │
-      │                                                                                        │
-      ├── logo─text.svg ──────────┬── logo─text+w125.png                                       │
-      │                           ├── logo─text+w125@2x.png                                    │
-      ┆                           ├── logo─text+h32.png                                        │
-                                  └── logo─text+h32@2x.png     ┆                               │
-      │                           ┆                            │                               │
-      ├── sprite.svg                                           │                               │
-      ├── sprite.css              ┆                            │                               │
-      │                           │                            │                               │
-  ┌───v───────────────────────────v────────────────────────────v───────────────────────────────v───┐
-  │ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒    index.html    ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+```<small>
+          (1) SVG /    (2) PNG                   (3) ICON              (4) HTML
+              SPRITE
+DATA ═════╦════════════╦═════════════════════════╦════════════════════════════╗
+          │            │                         │                            │
+┌─────────v────┐       │                         │                 ┌──────────v────┐
+│ SVG TEMPLATE │       │                         │                 | HTML TEMPLATE │
+└───┬──────────┘       v                         v                 └──────────┬────┘
+    │                                                                         │
+    ├─ logo.svg ───────┬─ logo─w164.png  ────────┬─ favicon.ico               │
+    │                  ├─ logo─w164@2x.png       ├─ favicon─32x32.png         │
+    │                  ├─ logo─h32.png           ├─ android─chrome─36x36.png  │
+    │                  └─ logo─h32@2x.png        ├─ apple─touch─icon.png      │
+    │                  ┆                         ┆                            │
+    │                                                                         │
+    ├─ logo─text.svg ──┬─ logo─text+w125.png                                  │
+    │                  ├─ logo─text+w125@2x.png                               │
+    ┆                  ├─ logo─text+h32.png                                   │
+                       └─ logo─text+h32@2x.png   ┆                            │
+    │                  ┆                         │                            │
+    ├─ sprite.svg                                │                            │
+    ├─ sprite.css      ┆                         │                            │
+    │                  │                         │                            │
+┌───v──────────────────v─────────────────────────v────────────────────────────v─┐
+│ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒     index.html    ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ ▒ │
+└───────────────────────────────────────────────────────────────────────────────┘
 ```
 
 The `smart.json` file contains the data used to drive the media generation process.
