@@ -4,10 +4,10 @@
   \ \   | |  / / / / __    ____    _\ \  / /|_/ / / __ |  / , _/   / /
    \ \  | | / / / / / /   /___/   /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
   __\ \ | |/ / / (_/ /          
-/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.6
+/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.7
 
 ```
-> Updated : April 6, 2016
+> Updated : April 7, 2016
 
 A Node.js module that generates all your svg, png, icon and svg sprites needs using a data─driven svg template system.
 

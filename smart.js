@@ -5,7 +5,7 @@
  *   / ____ |  /  _  ____/   ____   / __/ /  |/  / / _ |   / _ \  /_  __/
  *   \ \  | | / / / / __    /___/  _\ \  / /|_/ / / __ |  / , _/   / /
  *  __\ \ | |/ / / (_/ /          /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
- * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.6
+ * /____/ |___/  \____/ Automate & optomize your graphic assets, v 0.1.7
  *
  * This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
  * For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp-svg-smart)
@@ -96,10 +96,10 @@ var mustache = require("mustache");
                         /* 2- create png file(s) per an svg file, for each provided scale (based on height or width) */
                         if (template.png) {
                             if (template.png.scale) { /* scale the image as specified by the user */
-                                resources.png = merge(wh('height', 'h'), resources.png);
-                                resources.png = merge(wh('width', 'w'), resources.png);
+                                resources.png = merge(resources.png, wh('height', 'h'));
+                                resources.png = merge(resources.png, wh('width', 'w'));
                             } else {
-                                resources.png = merge(wh(), resources.png); /* if scale isn't defined, create a matching png 1:1 */
+                                resources.png = merge(resources.png, wh()); /* if scale isn't defined, create a matching png 1:1 */
                             }
                             function wh(property, prefix){
                                 // Summery: png helper function, generate lists for scale (width / height)
@@ -255,15 +255,16 @@ var mustache = require("mustache");
                 global: smart.global,
                 package: read(package_filename)
             };
-            var _resources = resources(hydrate(smart.template, data),
-                hydrate(smart.data, data), data.global.files.concatenator, data.global.files.dist);
+            var dist = data.global.files.dist || 'dist';
+            var res  = resources(hydrate(smart.template, data),
+                hydrate(smart.data, data), data.global.files.concatenator, dist);
 
             return {
-                svg: _resources.svg,
-                png: _resources.png,
-                icon: _resources.icon,
-                sprite: _resources.sprite,
-                dist: data.global.files.dist,
+                svg: res.svg,
+                png: res.png,
+                icon: res.icon,
+                sprite: res.sprite,
+                dist: dist,
                 html: hydrate(smart.html, data)
             };
         }
