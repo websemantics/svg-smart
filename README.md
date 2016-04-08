@@ -4,10 +4,10 @@
   \ \   | |  / / / / __    ____    _\ \  / /|_/ / / __ |  / , _/   / /
    \ \  | | / / / / / /   /___/   /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
   __\ \ | |/ / / (_/ /          
-/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.7
+/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.8
 
 ```
-> Updated : April 7, 2016
+> Updated : April 8, 2016
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
