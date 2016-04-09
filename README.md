@@ -4,12 +4,14 @@
   \ \   | |  / / / / __    ____    _\ \  / /|_/ / / __ |  / , _/   / /
    \ \  | | / / / / / /   /___/   /___/ /_/  /_/ /_/ |_| /_/|_|   /_/
   __\ \ | |/ / / (_/ /          
-/____/  |___/  \____/  Automate & optimize your graphic assets, v 0.1.8
+/____/  |___/  \____/  Automate & optimize your graphic assets.
 
 ```
 > Updated : April 8, 2016
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![NPM version](https://badge.fury.io/js/svg-smart.svg)](http://badge.fury.io/js/svg-smart)
+
 
 A Node.js module that generates all your svg, png, icon and svg sprites needs using a data─driven svg template system.
 
