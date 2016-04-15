@@ -19,7 +19,6 @@ This Module was designed to be used with a build system, i.e. http://gulpjs.com/
 
 For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp─svg─smart)
 
-This folder contains template files for generating media files. SVG templates contains the graphics blueprint for the required `SVG`, `PNG`, `ICO` and `SVG` sprite files. The html template is used to generate the `index.html` file for media preview.
 
 ## Workflow
 
@@ -57,10 +56,16 @@ The `smart.json` file contains the data used to drive the media generation proce
 
 List of values that can be referenced in the media list.
 
-#### Media
+#### Development
 
-List of the media to be generated. Each entry of this list represent a different variation of the media being generated.
+1- Install Release-it
 
-The `key` part of each media entry represent the `prefix` of the media filename generated. for example, `logo` will generate `logo.svg` and `logo.png` in one the the many variations created.
+```
+npm install release-it -g
+```
 
-The `value` part of an entry has two sections, `svg` which contains template data to drive the template generation of the `SVG` media, and `png` which specify the dimensions aspects of the generated `PNG` images.
+2- Run it, to git commit and publish to npm
+
+```
+release-it
+```
