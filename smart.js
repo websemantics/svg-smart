@@ -10,13 +10,23 @@
  * This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
  * For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp-svg-smart)
  *
- * @link      http://websemantics.ca
+ * @link      http://websemantics.ca 
  * @author    Web Semantics, Inc. Dev Team <team@websemantics.ca>
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.ca>
  */
 
-var readfile = require('require-dot-file')
-var mustache = require('mustache')
+var readfile  = require('require-dot-file')
+var handlebar = require('handlebars')
+var color     = require('tinycolor2')
+var safe      = require('safe-eval')
+
+/* Introducing Colors Helpers,
+   Package, https://github.com/bgrins/TinyColor
+   Tool,  http://razorjam.github.io/sasscolourfunctioncalculator/
+*/
+handlebar.registerHelper('color', function(options) {
+  return new handlebar.SafeString(safe('color' + options.fn(this).trim() + '.toString()', {color: color}));
+});
 
 ;(() => {
   'use strict'
@@ -181,12 +191,12 @@ var mustache = require('mustache')
    * Hydrate:  Let's do the recursive thing, ...
    *
    *           Traverse the object properties to replace any occurances of
-   *           the global variables references with thier values, .. mustache style!
+   *           the global variables references with thier values, .. handlebar style!
    *
    *           i.e "name" : "{{ variable_reference }}"
    *
    * @param {object} object to be processed
-   * @param {global} global variables
+   * @param {global} global variables, if not provided, envaluate handlebar helper functions
    */
   function hydrate (obj, global) {
     if (typeof obj === 'object') {
@@ -194,7 +204,7 @@ var mustache = require('mustache')
         obj[i] = hydrate(obj[i], global)
       }
     } else if (typeof obj === 'string') {
-      return mustache.render(obj, global)
+      return handlebar.compile(obj)(global);
     }
     return obj
   }
@@ -240,6 +250,16 @@ var mustache = require('mustache')
     return data
   }
 
+  // /**
+  //  * Evaluate all the helper classes in the global vaiables
+  //  *
+  //  * @param {filename} string, json file
+  //  * @return object
+  //  */
+  // function eval (filename) {
+  //
+  // }
+
   module.exports = {
     /**
      * Load and process the svg-smart json file
@@ -250,9 +270,10 @@ var mustache = require('mustache')
     load: function (smart_filename, package_filename) {
       var smart = read(smart_filename)
       var data = {
-        global: smart.global,
+        global: hydrate(smart.global, smart.global),
         package: read(package_filename)
       }
+
       var dist = data.global.files.dist || 'dist'
       var res = resources(hydrate(smart.template, data),
         hydrate(smart.data, data), data.global.files.concatenator, dist)
