@@ -17,7 +17,7 @@ A Node.js module that generates all your svg, png, icon and svg sprites needs us
 
 This Module was designed to be used with a build system, i.e. http://gulpjs.com/, http://gruntjs.com/ etc.
 
-For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp─svg─smart)
+For Gulp projects, use [Gulp SVG Smart](https://github.com/websemantics/gulp-svg-smart)
 
 
 ## Workflow
